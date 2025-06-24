@@ -20,9 +20,6 @@ using System.Reflection;
 
 namespace DeviceHostLinkMemo
 {
-    /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
-    /// </summary>
     public partial class MainWindow : Window
     {
         public ObservableCollection<DataItem> DataItems { get; set; }
@@ -99,7 +96,7 @@ namespace DeviceHostLinkMemo
                 var lines = File.ReadAllLines(iniFilePath, Encoding.UTF8);
                 DataItems.Clear();
 
-                foreach (var line in lines.Take(16)) // 16行制限
+                foreach (var line in lines.Take(16))
                 {
                     var tokens = line.Split(';');
                     if (tokens.Length < 10) continue;
